@@ -9,9 +9,16 @@ export default class Cell extends React.Component {
   }
 
   clickEvent = () => {
-    this.setState({
-      color: '#333'
-    })
+    if(this.state.color === this.props.value){
+      this.setState({
+        color: '#333'
+       })
+    }
+    else if(this.state.color === '#333'){
+      this.setState({
+        color: this.props.value
+      })
+    }
   }
 
   render() {
